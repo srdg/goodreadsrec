@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BookREKS</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Homemade+Apple&display=swap" rel="stylesheet"> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style type="text/css">
+    .jumbotron {
+     font-family: 'Homemade Apple', cursive;
+     background-color: powderblue;
+    }
+  </style>
+</head>
+<body>
+	<div class="jumbotron text-center" >
+ 		<h1>Books</h1>
+		<p>You searched for</p>
+		<figure>
+			<img src = {{links[0].image_url}} /> 
+			<figcaption>{{links[0].title}}</figcaption>
+		</figure> 
+	</div>
+	<div class="container">
+		<div class="row">
+			{%for i in range(1,4)%}
+					<div class="col-sm-4" style="align-content: center;">
+						<img src="{{links[i].image_url}}"/>
+						<figcaption>{{links[i].title}}</figcaption>
+					</div>
+			{%endfor%}
+		</div>
+		<div class="row">
+			{%for i in range(4,7)%}
+					<div class="col-sm-4" style="align-content: center;">
+						<img src="{{links[i].image_url}}"/>
+						<figcaption>{{links[i].title}}</figcaption>
+					</div>
+			{%endfor%}
+		</div>
+ 	 	<h2>Search another!</h2>
+ 		 <form class="form-inline" method="POST">
+	   		<div class="form-group">
+	      		<input type="text" class="form-control" id="text" placeholder="Enter ID" name="text">
+	    	</div>
+	    		<button type="submit" class="btn btn-default">Submit</button>
+  		</form>
+  		<br>
+</body>
+</html>
