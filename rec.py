@@ -22,6 +22,6 @@ def my_form_post():
 		return render_template('404.html')
 	
 if __name__=="__main__":
-	app.run(host="localhost")
+	app.run()
 
 
