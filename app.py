@@ -13,9 +13,9 @@ def form():
 def form_post():
 	try:
 		input = request.form['input']
-		 isbn_no/book_id  = int(text.strip())
-		recommendations = gc.book(isbn_no/book_id).similar_books[:7]
-		recommendations.insert(0,gc.book( isbn_no/book_id ))
+		isbn_no/book_id= int(text.strip())
+		recommendations = gc.book(isbn_no).similar_books[:7]
+		recommendations.insert(0,gc.book(book_id))
 		print(recommendations)
 		return render_template('index.html', len = 7, recommendations=links)
 	except:
