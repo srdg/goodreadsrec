@@ -12,12 +12,12 @@ def my_form():
 @app.route('/', methods=['POST'])
 def my_form_post():
 	try:
-		text = request.form['text']
-		processed_text = int(text.strip())
-		links = gc.book(processed_text).similar_books[:7]
-		links.insert(0,gc.book(processed_text))
-		print(links)
-		return render_template('index.html', len = 7, links=links)
+		input = request.form['input']
+		 isbn_no/book_id  = int(text.strip())
+		recommendations = gc.book(isbn_no/book_id).similar_books[:7]
+		recommendations.insert(0,gc.book( isbn_no/book_id ))
+		print(recommendations)
+		return render_template('index.html', len = 7, recommendations=links)
 	except:
 		return render_template('404.html')
 	
