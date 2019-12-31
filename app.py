@@ -6,11 +6,11 @@ gc = client.GoodreadsClient('ZfHUtSBSMU3ZOTo82zl7wA','OlI30Km37ikK1EIgG7jwWDxeia
 app = Flask(__name__)
 
 @app.route('/')
-def my_form():
+def form():
 	return render_template('form.html' )
 
 @app.route('/', methods=['POST'])
-def my_form_post():
+def form_post():
 	try:
 		input = request.form['input']
 		 isbn_no/book_id  = int(text.strip())
