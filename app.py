@@ -7,11 +7,11 @@ gc = client.GoodreadsClient(os.environ.get('GCLIENT_TOKEN'),os.environ.get('GCLI
 app = Flask(__name__)
 
 @app.route('/')
-def my_form():
+def form():
 	return render_template('form.html' )
 
 @app.route('/', methods=['POST'])
-def my_form_post():
+def form_post():
 	try:
 		text = request.form['text']
 		processed_text = int(text.strip())
