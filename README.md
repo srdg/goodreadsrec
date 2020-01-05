@@ -10,7 +10,7 @@ This is a basic web application for a book recommendation system. It uses the [p
 ```
 git clone https://github.com/srdg/goodreadsrec.git  
 cd goodreadsrec
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 python3 app.py
 ```
 Open [`http://localhost:5000`](http://localhost:5000) and you should be able to see the app deployed in your local system.
