@@ -20,8 +20,8 @@ def my_form_post():
 		return render_template('index.html', len = 7, links=links)
 	except:
 		return render_template('404.html')
-	
-if __name__=="__main__":
+
+def main():
 	app.run()
 
 
