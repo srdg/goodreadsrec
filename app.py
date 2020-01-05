@@ -14,15 +14,16 @@ def form():
 def form_post():
 	try:
 		text = request.form['text']
-		processed_text = int(text.strip())
-		links = gc.book(processed_text).similar_books[:7]
-		links.insert(0,gc.book(processed_text))
-		print(links)
-		return render_template('index.html', len = 7, links=links)
+		if request.form.get('userChoice'):
+			processed_text = int(text.strip())
+			links = gc.book(processed_text).similar_books[:7]
+			links.insert(0,gc.book(processed_text))
+			print(links)
+			return render_template('index.html', len = 7, links=links)
 	except:
 		return render_template('404.html')
 	
 if __name__=="__main__":
-	app.run()
+	app.run(debug=True)
 
 
