@@ -1,7 +1,8 @@
 from flask import Flask, request, render_template
 from goodreads import client
+import os
 
-gc = client.GoodreadsClient('ZfHUtSBSMU3ZOTo82zl7wA','OlI30Km37ikK1EIgG7jwWDxeiaAJDX10Fm9zw9XTUA')
+gc = client.GoodreadsClient(os.environ.get('GCLIENT_TOKEN'),os.environ.get('GCLIENT_KEY'))
 
 app = Flask(__name__)
 
