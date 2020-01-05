@@ -9,4 +9,4 @@ Please follow the following steps for contributing to this project.
 + After solving each issue, submit a pull request stating the following:  
 **Name** : `Your name`  
 **Issue handled** : `#1,#2, etc.`  
-**Your solution** : `How did you solve the issue? If you just did the instructions mentioned in the issue, then copy-paste the instructions here.`
+**Your solution** : `How did you solve the issue? If you just followed the instructions mentioned in the issue, then copy-paste the instructions here.`
