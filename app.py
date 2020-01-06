@@ -37,7 +37,7 @@ def search_by_id():
 	else:
 		return true
 
-	def main():
+def main():
 	app.run()
 
 if __name__=="__main__":
