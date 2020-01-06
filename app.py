@@ -16,7 +16,7 @@ def form_post():
 	try:
 		user_input = request.form['text']
 		query_num = int(user_input.strip())
-		if request.form.get('userChoice') == 'isbn_no':
+		if request.form['userChoice'] == 'isbn_no':
     			book_obj = gc.book(isbn=query_num)
 		else:
     			book_obj = gc.book(query_num)
