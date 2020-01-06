@@ -20,15 +20,15 @@ def form_post():
     			book_obj = gc.book(isbn=query_num)
 		else:
     			book_obj = gc.book(query_num)
-		book_obj = book_obj.similar_books[:7]
-		book_obj.insert(0,gc.book(query_num))
+		links = book_obj.similar_books[:7]
+		links.insert(0,gc.book(query_num))
 		print(book_obj)
 		return render_template('index.html', len = 7, links=links)
 	except:
 		return render_template('404.html')
 
 def main():
-	app.run(debug=True)
+	app.run()
 
 if __name__=="__main__":
 	main()
