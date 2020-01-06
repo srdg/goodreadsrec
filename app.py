@@ -16,7 +16,6 @@ def form_post():
 	try:
 		links = get_search_tag()
 		links.insert(0,gc.book(query_num))
-		print(book_obj)
 		return render_template('index.html', len = 7, links=links)
 	except:
 		return render_template('404.html')
@@ -27,7 +26,8 @@ def get_search_tag():
 	if search_by_id() == true:
 		book_obj = gc.book(query_num)
 	else:
-		book_obj = gc.book(query_num)
+		book_obj = gc.book(isbn=query_num)
+	print(book_obj)
 	links = book_obj.similar_books[:7]
 	return links
 
