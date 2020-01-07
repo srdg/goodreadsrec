@@ -14,7 +14,7 @@ def form():
 @app.route('/', methods=['POST'])
 def form_post():
 	try:
-		links = get_search_tag()
+		links,query_num = get_search_tag()
 		links.insert(0,gc.book(query_num))
 		return render_template('index.html', len = 7, links=links)
 	except:
@@ -29,7 +29,7 @@ def get_search_tag():
 		book_obj = gc.book(isbn=query_num)
 	print(book_obj)
 	links = book_obj.similar_books[:7]
-	return links
+	return links,query_num
 
 def search_by_id():
 	if request.form['userChoice'] == 'isbn_no':
