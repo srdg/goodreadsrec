@@ -33,9 +33,9 @@ def get_search_tag():
 
 def search_by_id():
 	if request.form['userChoice'] == 'isbn_no':
-    		return false
+    		return False
 	else:
-		return true
+		return True
 
 def main():
 	app.run()
