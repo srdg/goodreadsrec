@@ -23,7 +23,7 @@ def form_post():
 def get_search_tag():
 	user_input = request.form['text']
 	query_num = int(user_input.strip())
-	if search_by_id() == true:
+	if search_by_id() == True:
 		book_obj = gc.book(query_num)
 	else:
 		book_obj = gc.book(isbn=query_num)
