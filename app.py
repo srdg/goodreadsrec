@@ -20,8 +20,8 @@ def form_post():
 			return render_template('notFound.html')
 		else:
 			return render_template('index.html', len = 7, links=links)
-	except IndexError as indexError:
-		render_template('indexError.html')
+	except IndexError:
+		return render_template('indexError.html')
 	except:
 		return render_template('404.html')
 
@@ -42,7 +42,7 @@ def search_by_id():
 		return True
 
 def main():
-	app.run()
+	app.run(debug=True)
 
 if __name__=="__main__":
 	main()
