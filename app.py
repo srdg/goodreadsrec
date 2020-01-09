@@ -16,10 +16,9 @@ def form_post():
 	try:
 		links,book_obj = get_search_tag()
 		links.insert(0,book_obj)
-		if not links:
-			return render_template('notFound.html')
-		else:
-			return render_template('index.html', len = 7, links=links)
+		return render_template('index.html', len = 7, links=links)
+	except KeyError:
+		return render_template('notFound.html')
 	except IndexError:
 		return render_template('indexError.html')
 	except:
@@ -27,9 +26,9 @@ def form_post():
 
 def get_search_tag():
 	user_input = request.form['text']
-	query_num = int(user_input.strip())
+	query_num = user_input.strip()
 	if search_by_id() == True:
-		book_obj = gc.book(query_num)
+		book_obj = gc.book(int(query_num))
 	else:
 		book_obj = gc.book(isbn=query_num)
 	links = book_obj.similar_books[:7]
@@ -39,7 +38,7 @@ def search_by_id():
 	if request.form['userChoice'] == 'isbn_no':
     		return False
 	else:
-		return True
+    		return True
 
 def main():
 	app.run(debug=True)
