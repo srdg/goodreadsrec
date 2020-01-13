@@ -10,6 +10,14 @@ app = Flask(__name__)
 def form():
 	return render_template('form.html' )
 
+@app.route('/ID/<id-no>')
+def id_book(idNo):
+    	return gc.book(idNo)
+
+@app.route('/ISBN/<isbn-no>')
+def isbn_book(isbnN0):
+    	return gc.book(isbn = isbnNo)
+
 
 @app.route('/', methods=['POST'])
 def form_post():
@@ -28,9 +36,9 @@ def get_search_tag():
 	user_input = request.form['text']
 	query_num = user_input.strip()
 	if search_by_id() == True:
-		book_obj = gc.book(query_num)
+		book_obj = redirect(url_for('id_book', idNo = query_num))
 	else:
-		book_obj = gc.book(isbn=query_num)
+		book_obj = redirect(url_for('isbn_book', isbnNo = query_num))
 	links = book_obj.similar_books[:7]
 	return links,book_obj
 
