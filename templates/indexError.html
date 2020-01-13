@@ -9,7 +9,12 @@
     <title>IndexError</title>
 </head>
 <style>
-body{
+
+.form{
+    justify-content: center;
+}
+
+p, h2{
     font-family: 'Homemade Apple', cursive;
 }
 .jumbotron{
@@ -21,6 +26,18 @@ body{
         <div class="jumbotron text-center">
             <p class="display-4">Not enough books are listed</p>
             <img src="https://media.giphy.com/media/322GNNU1cdoHVvT5rv/giphy.gif" alt="animation" width="200px">
+            <br>
+            <h2>Search Again</h2>
+            <form class="form-inline form" method="POST">
+                <div class="form-group">
+                <input type="text" class="form-control" id="text" placeholder="Enter ID" name="text">
+                </div>
+                <div class="form-group" style="margin-left: 10px;">
+                <input type="radio" name="userChoice" value="isbn_no">ISBN
+                <input type="radio" name="userChoice" value="id_no">ID
+                </div>
+                <button type="submit" class="btn btn-primary" style="margin-left: 10px;">Submit</button>
+            </form>
         </div>
     </div>
 </body>
