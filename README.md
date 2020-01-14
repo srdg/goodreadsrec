@@ -4,7 +4,7 @@
 * A book recommender system using the Goodreads API 
 
 ## Contributing Guidelines 
-Read the contribution guidelines carefully [CONTRIBUTING.md](CONTRIBUTING.md).
+Please read the contribution guidelines carefully at [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## About This Project 
 * This is a basic web application for a book recommendation system. It uses the [python wrapper](https://github.com/paulshannon/python-goodreads) of the [Goodreads API](https://goodreads.com/api) to show a list of recommended books to the user, given the book ID in goodreads.
@@ -28,4 +28,3 @@ python3 app.py
 ## Features 
 TBD
 
-		 READ instructions before making any pull request.
