@@ -1,25 +1,31 @@
 # goodreadsrec
 
-## Contributing guidelines
-Read [CONTRIBUTING.md](CONTRIBUTING.md).
+## Project Description
+* A book recommender system using the Goodreads API 
 
-## About this project
-This is a basic web application for a book recommendation system. It uses the [python wrapper](https://github.com/paulshannon/python-goodreads) of the [Goodreads API](https://goodreads.com/api) to show a list of recommended books to the user, given the book ID in goodreads.
+## Contributing Guidelines 
+Read the contribution guidelines carefully [CONTRIBUTING.md](CONTRIBUTING.md).
 
-## Installation
+## About This Project 
+* This is a basic web application for a book recommendation system. It uses the [python wrapper](https://github.com/paulshannon/python-goodreads) of the [Goodreads API](https://goodreads.com/api) to show a list of recommended books to the user, given the book ID in goodreads.
+
+## Installation 
 ```
-git clone https://github.com/srdg/goodreadsrec.git  
+git clone https://github.com/srdg/goodreadsrec.git
 cd goodreadsrec
 pip3 install -r requirements.txt
 python3 app.py
 ```
+### Start Local Server 
+* Go over to the [Goodreads API](https://goodreads.com/api) and register a dummy application to get your own developer token and key. (You need to create an account first, though.)
 
-Go over to the [Goodreads API](https://goodreads.com/api) and register a dummy application to get your own developer token and key. (You need to create an account first, though.)  
-Use the token and the key in `app.py:L5` to connect your goodreads client to the API.
-Open [`http://localhost:5000`](http://localhost:5000) and you should be able to see the app deployed in your local system.
+* Use the token and the key in `app.py:L5` to connect your goodreads client to the API.Open[Local Server](http://localhost:5000) and you should be able to see the app deployed in your local system.
 
 ## Deployment
-The app is currently deployed on [heroku](http:goodreadsrec.herokuapp.com). Continuous integration is enabled.
 
-## Features
+* The app is currently deployed on [heroku](http:goodreadsrec.herokuapp.com). Continuous integration is enabled.
+
+## Features 
 TBD
+
+		 READ instructions before making any pull request.
