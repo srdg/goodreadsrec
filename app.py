@@ -49,7 +49,7 @@ def search_by_id():
     		return True
 
 def main():
-	app.run(debug=True)
+	app.run()
 
 if __name__=="__main__":
 	main()
