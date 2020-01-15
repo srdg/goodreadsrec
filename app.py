@@ -10,11 +10,11 @@ app = Flask(__name__)
 def form():
 	return render_template('form.html' )
 
-@app.route('/ID/<id-no>')
+@app.route('/ID/<idNo>')
 def id_book(idNo):
     	return gc.book(idNo)
 
-@app.route('/ISBN/<isbn-no>')
+@app.route('/ISBN/<isbnNo>')
 def isbn_book(isbnN0):
     	return gc.book(isbn = isbnNo)
 
@@ -49,7 +49,7 @@ def search_by_id():
     		return True
 
 def main():
-	app.run(debug=True)
+	app.run()
 
 if __name__=="__main__":
 	main()
