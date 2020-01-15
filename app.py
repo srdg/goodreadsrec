@@ -2,7 +2,7 @@ from flask import Flask, request, render_template, redirect, url_for
 from goodreads import client
 import os
 
-gc = client.GoodreadsClient(os.environ.get('2bWV9fNe4fv26Ot21Z8e0d9IaRMnmZhH7ixPvFh4'),os.environ.get('gRuDBtthK6hrjOb8ZFInw'))
+gc = client.GoodreadsClient(os.environ.get('GCLIENT_TOKEN'),os.environ.get('GCLIENT_KEY'))
 
 app = Flask(__name__)
 
