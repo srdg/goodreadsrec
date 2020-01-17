@@ -10,21 +10,25 @@ app = Flask(__name__)
 def form():
 	return render_template('form.html' )
 
-@app.route('/ID/<idNo>')
-def id_book(idNo):
-    	return gc.book(idNo)
+@app.route('/search/ID/<idnum>')
+def display_booksById(idnum):
+	render_template('index.html', len = 7, links=links)
 
-@app.route('/ISBN/<isbnNo>')
-def isbn_book(isbnN0):
-    	return gc.book(isbn = isbnNo)
+@app.route('/search/ISBN/<isbn>')
+def display_booksByIsbn(isbn):
+	render_template('index.html', len = 7, links=links)
+
 
 
 @app.route('/', methods=['POST'])
 def form_post():
 	try:
-		links,book_obj = get_search_tag()
+		links,book_obj,query_num = get_search_tag()
 		links.insert(0,book_obj)
-		return render_template('index.html', len = 7, links=links)
+		if search_by_id() == True:
+			redirect(url_for('display_booksById', idnum=query_num, len=7, links=links))
+		else:
+			redirect(url_for('display_booksByIsbn', isbn=query_num, len=7, links=links))
 	except KeyError:
 		return render_template('notFound.html')
 	except IndexError:
@@ -36,11 +40,11 @@ def get_search_tag():
 	user_input = request.form['text']
 	query_num = user_input.strip()
 	if search_by_id() == True:
-		book_obj = redirect(url_for('id_book', idNo = query_num))
+		book_obj = gc.book(query_num)
 	else:
-		book_obj = redirect(url_for('isbn_book', isbnNo = query_num))
+		book_obj = gc.book(isbn=query_num)
 	links = book_obj.similar_books[:7]
-	return links,book_obj
+	return links,book_obj,query_num
 
 def search_by_id():
 	if request.form['userChoice'] == 'isbn_no':
