@@ -12,10 +12,12 @@ def form():
 
 @app.route('/search/ID/<idnum>')
 def display_booksById(idnum):
+	links = request.args['links']
 	return render_template('index.html', len = 7, links=links)
 
 @app.route('/search/ISBN/<isbn>')
 def display_booksByIsbn(isbn):
+	links = request.args['links']
 	return render_template('index.html', len = 7, links=links)
 
 
