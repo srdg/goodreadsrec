@@ -26,9 +26,9 @@ def form_post():
 		links,book_obj,query_num = get_search_tag()
 		links.insert(0,book_obj)
 		if search_by_id() == True:
-			redirect(url_for('display_booksById', idnum=query_num, len=7, links=links))
+			return redirect(url_for('display_booksById', idnum=query_num, len=7, links=links))
 		else:
-			redirect(url_for('display_booksByIsbn', isbn=query_num, len=7, links=links))
+			return redirect(url_for('display_booksByIsbn', isbn=query_num, len=7, links=links))
 	except KeyError:
 		return render_template('notFound.html')
 	except IndexError:
