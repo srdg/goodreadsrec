@@ -4,24 +4,43 @@
 	<title>BookREKS</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Homemade+Apple&display=swap" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Dancing+Script|Rock+Salt&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <style type="text/css">
-    .jumbotron {
-     font-family: 'Homemade Apple', cursive;
-     background-color: powderblue;
-    }
+	.jumbotron {
+	  font-family: 'Rock Salt', cursive;
+	  background-color: powderblue;
+	}
+	.cursor {
+	  min-height: 100vh;
+	  background-color: #ffe6044d;
+	  cursor:url(https://resizeimage.net/mypic/wWmQyCxVb3ESOBFy/eAhAt/book-cartoon-royalty-free-clip.jpg), auto;
+	}
+	.container {
+    font-family: 'Dancing Script', cursive;
+	}
+	.form-inline {
+		margin: auto;
+
+  border: 3px solid #73AD21;
+	}
+	.form-inline {
+		margin: auto;
+		padding-left: 20px;
+		width: 500px;
+		border: 3px solid #73AD21;
+	}
   </style>
 </head>
-<body>
+<body class="cursor">
 	<div class="jumbotron text-center" >
  		<h1>Books</h1>
 		<p>You searched for</p>
 		<figure>
-			<img src = {{links[0].image_url}} /> 
+			<img src = {{links[0].image_url}} />
 			<figcaption>{{links[0].title}}</figcaption>
-		</figure> 
+		</figure>
 	</div>
 	<div class="container">
 		<div class="row">
@@ -40,19 +59,20 @@
 					</div>
 			{%endfor%}
 		</div>
- 	 	<h2>Search another!</h2>
- 		 <div class="container">
-			<h2>Search Again</h2>
-			<form class="form-inline" method="POST">
-			  <div class="form-group">
-				<input type="text" class="form-control" id="text" placeholder="Enter ID" name="text">
-			  </div>
-			  <div class="form-group" style="margin-left: 10px;">
+		<form class="form-inline" method="POST">
+			<h2>Search Another:</h2>
+			<div class="form-group">
+				<input type="text" class="form-control" id="text" placeholder="Enter ID" name="text" style="width:455px">
+			</div>
+			<br><br>
+			<div class="form-group">
 				<input type="radio" name="userChoice" value="isbn_no">ISBN
-				<input type="radio" name="userChoice" value="id_no">ID
-			  </div>
-			  <button type="submit" class="btn btn-default" style="margin-left: 10px;">Submit</button>
-			</form>
+				<input type="radio" name="userChoice" value="id_no" style="margin-left:10px;">ID
+			</div>
+			<br>
+			<button type="submit" class="btn btn-primary"  style="margin: 10px;margin-left:200px;">Submit</button>
+		</form>
   		<br>
+		</div>
 </body>
 </html>
