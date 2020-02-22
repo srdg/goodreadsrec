@@ -4,17 +4,25 @@
 	<title>BookREKS</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  	<link href="https://fonts.googleapis.com/css?family=Homemade+Apple&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Coda+Caption:800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Heebo&display=swap" rel="stylesheet">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 	<style type="text/css">
-	    h1, h2, p {
-	     font-family: 'Homemade Apple', cursive;
-	     
-		}
-		.jumbotron{
-			background-color: powderblue;
-		}
+			.jumbotron {
+							font-family: 'Coda Caption', sans-serif;
+				background-color: powderblue;
+
+			}
+			.cursor {
+				min-height: 100vh;
+				background-color: #ffe6044d;
+				cursor:url(https://resizeimage.net/mypic/wWmQyCxVb3ESOBFy/eAhAt/book-cartoon-royalty-free-clip.jpg), auto;
+			}
+			.container {
+				font-family: 'Heebo', sans-serif;
+
+			}
 	    .rawtext {
 	    	font-family: cursive;
 	    }
@@ -27,26 +35,36 @@
 		  from { width: 0 }
 		  to { width: 100% }
 		}
+		.form-inline {
+			margin: auto;
+			padding-left: 20px;
+			width: 500px;
+		}
   	</style>
 </head>
-<body>
+<body class="cursor">
    <div class="jumbotron text-center">
     	<h1>404</h1>
         <h2>Sorry, no recommendations available!</h2>
 		<p class="typetexterror">Are you sure your entered <span class="rawtext">ISBN/ID</span> is correct?</p>
 		<br>
-		<h2>Search Again</h2>
+
+	</div>
+	<div class="container">
 		<form class="form-inline" method="POST">
+			<h2>Search Again:</h2>
 			<div class="form-group">
-			<input type="text" class="form-control" id="text" placeholder="Enter ID" name="text">
+				<input type="text" class="form-control" id="text" placeholder="Enter ID" name="text" style="width:455px">
 			</div>
-			<div class="form-group" style="margin-left: 10px;">
-			<input type="radio" name="userChoice" value="isbn_no">ISBN
-			<input type="radio" name="userChoice" value="id_no">ID
+			<br><br>
+			<div class="form-group">
+				<input type="radio" name="userChoice" value="isbn_no">ISBN
+				<input type="radio" name="userChoice" value="id_no" style="margin-left:10px;">ID
 			</div>
-			<button type="submit" class="btn btn-default" style="margin-left: 10px;">Submit</button>
+			<br>
+			<button type="submit" class="btn btn-primary"  style="margin: 10px;margin-left:200px;">Submit</button>
 		</form>
 	</div>
-  
+
 </body>
 </html>

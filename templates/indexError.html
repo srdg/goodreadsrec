@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Homemade+Apple&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Coda+Caption:800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Heebo&display=swap" rel="stylesheet">
     <title>IndexError</title>
 </head>
 <style>
@@ -14,29 +15,44 @@
     justify-content: center;
 }
 
-p, h2{
-    font-family: 'Homemade Apple', cursive;
+.jumbotron {
+  font-family: 'Heebo', sans-serif;
+  background-color: powderblue;
+
 }
-.jumbotron{
-    background: rgba(101, 228, 228, 0.3);
+.cursor {
+  min-height: 100vh;
+  background-color: #ffe6044d;
+  cursor:url(https://resizeimage.net/mypic/wWmQyCxVb3ESOBFy/eAhAt/book-cartoon-royalty-free-clip.jpg), auto;
+}
+.container {
+font-family: 'Heebo', sans-serif;
+
+}
+.form-inline {
+  margin: auto;
+  padding-left: 20px;
+  width: 500px;
 }
 </style>
 <body>
-    <div class="container mt-5">
+    <div class=" mt-5">
         <div class="jumbotron text-center">
             <p class="display-4">Not enough books are listed</p>
             <img src="https://media.giphy.com/media/322GNNU1cdoHVvT5rv/giphy.gif" alt="animation" width="200px">
             <br>
-            <h2>Search Again</h2>
-            <form class="form-inline form" method="POST">
-                <div class="form-group">
-                <input type="text" class="form-control" id="text" placeholder="Enter ID" name="text">
-                </div>
-                <div class="form-group" style="margin-left: 10px;">
+            <form class="form-inline" method="POST">
+              <h2>Search Again:</h2>
+              <div class="form-group">
+                <input type="text" class="form-control" id="text" placeholder="Enter ID" name="text" style="width:455px">
+              </div>
+              <br><br>
+              <div class="form-group">
                 <input type="radio" name="userChoice" value="isbn_no">ISBN
-                <input type="radio" name="userChoice" value="id_no">ID
-                </div>
-                <button type="submit" class="btn btn-primary" style="margin-left: 10px;">Submit</button>
+                <input type="radio" name="userChoice" value="id_no" style="margin-left:10px;">ID
+              </div>
+              <br>
+              <button type="submit" class="btn btn-primary"  style="margin: 10px;margin-left:200px;">Submit</button>
             </form>
         </div>
     </div>
