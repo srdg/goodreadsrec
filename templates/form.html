@@ -11,25 +11,101 @@
   <style type="text/css">
     .jumbotron {
         font-family: 'Coda Caption', sans-serif;
-      background-color: powderblue;
+      background-color: #312F2F;
+      color: white;
 
     }
     .cursor {
       min-height: 100vh;
-      background-color: #ffe6044d;
+      background-color: #BF98A0;
       cursor:url(https://resizeimage.net/mypic/wWmQyCxVb3ESOBFy/eAhAt/book-cartoon-royalty-free-clip.jpg), auto;
 		}
     .container {
       font-family: 'Heebo', sans-serif;
+      background-color: #BF98A0;
     }
     .form-inline {
       margin: auto;
       padding-left: 20px;
       width: 500px;
     }
+	.sidebar {
+	  height: 100%;
+	  width: 0;
+	  position: fixed;
+	  z-index: 1;
+	  top: 0;
+	  left: 0;
+	  background-color: #111;
+	  overflow-x: hidden;
+	  transition: 0.5s;
+	  padding-top: 60px;
+	}
+
+	.sidebar a {
+	  padding: 8px 8px 8px 32px;
+	  text-decoration: none;
+	  font-size: 25px;
+	  color: #818181;
+	  display: block;
+	  transition: 0.3s;
+	}
+
+	.sidebar a:hover {
+	  color: #f1f1f1;
+	}
+
+	.sidebar .closebtn {
+	  position: absolute;
+	  top: 0;
+	  right: 25px;
+	  font-size: 36px;
+	  margin-left: 50px;
+	}
+
+	.openbtn {
+	  font-size: 20px;
+	  cursor: pointer;
+	  background-color: #111;
+	  color: white;
+	  padding: 10px 15px;
+	  border: none;
+	}
+
+	.openbtn:hover {
+	  background-color: #444;
+	}
+
+	#main {
+	  transition: margin-left .5s;
+	  padding: 16px;
+	}
+
+	/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+	@media screen and (max-height: 450px) {
+	  .sidebar {padding-top: 15px;}
+	  .sidebar a {font-size: 18px;}
+	}
   </style>
 </head>
 <body class="cursor">
+	<div id="mySidebar" class="sidebar">
+	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+	  <a href="https://kaggle.com/jealousleopard/goodreadsbooks" target="_blank">Dataset</a>
+	  <a href="mailto:soumik@cse.jgec.ac.in">Contact</a>
+	</div>
+	  <button class="openbtn" onclick="openNav()">☰</button>  
+	<script>
+	function openNav() {
+	  document.getElementById("mySidebar").style.width = "250px";
+	  document.getElementById("main").style.marginLeft = "250px";
+	}
+
+	function closeNav() {
+	  document.getElementById("mySidebar").style.width = "0";
+	  document.getElementById("main").style.marginLeft= "0";
+	}
+	</script>
   <div class="jumbotron text-center">
     <img style="height:150px" src="https://www.pinclipart.com/picdir/big/169-1690579_book-icon-png-clip-art-transparent-download-book.png"></img>
       <h1>Books</h1>
@@ -38,12 +114,12 @@
   <form class="form-inline" method="POST">
     <h2>Search:</h2>
     <div class="form-group">
-      <input type="text" class="form-control" id="text" placeholder="Enter ID" name="text" style="width:455px">
+      <input type="text"  autocomplete="off" class="form-control" id="text" placeholder="Enter ID/ISBN to query" name="text" style="width:455px">
     </div>
     <br><br>
     <div class="form-group">
-      <input type="radio" name="userChoice" value="isbn_no">ISBN
-      <input type="radio" name="userChoice" value="id_no" style="margin-left:10px;">ID
+      <input type="radio" name="userChoice" value="isbn_no">  ISBN
+      <input type="radio" name="userChoice" value="id_no" style="margin-left:10px;">  ID
     </div>
     <br>
     <button type="submit" class="btn btn-primary"  style="margin: 10px;margin-left:200px;">Submit</button>

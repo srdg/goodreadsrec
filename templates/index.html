@@ -3,22 +3,28 @@
 <head>
 	<title>BookREKS</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-	<link href="https://fonts.googleapis.com/css?family=Dancing+Script|Rock+Salt&display=swap" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Fondamento&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <style type="text/css">
 	.jumbotron {
-	  font-family: 'Rock Salt', cursive;
-	  background-color: powderblue;
+	  font-family: 'Fondamento', cursive;
+	  background-color: #264653;
+	  color: white;
+	  padding-left : 80px;
+		}
+	a:hover {
+	  color: yellow;
 	}
 	.cursor {
 	  min-height: 100vh;
-	  background-color: #ffe6044d;
+	  background-color: #2a9d8f;
 	  cursor:url(https://resizeimage.net/mypic/wWmQyCxVb3ESOBFy/eAhAt/book-cartoon-royalty-free-clip.jpg), auto;
 	}
 	.container {
-    font-family: 'Dancing Script', cursive;
+		font-family: 'Fondamento';
 	}
 	.form-inline {
 		margin: auto;
@@ -29,35 +35,172 @@
 		padding-left: 20px;
 		width: 500px;
 	}
+	 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+	.flip-card {
+	  background-color: transparent;
+	  width: 180px;
+	  height: 180px;
+	  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+	  padding: 10px;
+	}
+
+	/* This container is needed to position the front and back side */
+	.flip-card-inner {
+	  position: relative;
+	  width: 100%;
+	  height: 100%;
+	  text-align: center;
+	  transition: transform 0.8s;
+	  transform-style: preserve-3d;
+	}
+
+	/* Do an horizontal flip when you move the mouse over the flip box container */
+	.flip-card:hover .flip-card-inner {
+	  transform: rotateY(180deg);
+	}
+
+	/* Position the front and back side */
+	.flip-card-front, .flip-card-back {
+	  position: absolute;
+	  width: 100%;
+	  height: 100%;
+	  -webkit-backface-visibility: hidden; /* Safari */
+	  backface-visibility: hidden;
+	}
+
+	/* Style the front side (fallback if image is missing) */
+	.flip-card-front {
+	  padding: 10px;
+	  background-color: #e9c46a;
+	  color: black;
+	}
+
+	/* Style the back side */
+	.flip-card-back {
+	  background-color: #f4a261;
+	  color: #003049;
+	  transform: rotateY(180deg);
+	} 
+	.sidebar {
+	  height: 100%;
+	  width: 0;
+	  position: fixed;
+	  z-index: 1;
+	  top: 0;
+	  left: 0;
+	  background-color: #111;
+	  overflow-x: hidden;
+	  transition: 0.5s;
+	  padding-top: 60px;
+	}
+
+	.sidebar a {
+	  padding: 8px 8px 8px 32px;
+	  text-decoration: none;
+	  font-size: 25px;
+	  color: #818181;
+	  display: block;
+	  transition: 0.3s;
+	}
+
+	.sidebar a:hover {
+	  color: #f1f1f1;
+	}
+
+	.sidebar .closebtn {
+	  position: absolute;
+	  top: 0;
+	  right: 25px;
+	  font-size: 36px;
+	  margin-left: 50px;
+	}
+
+	.openbtn {
+	  font-size: 20px;
+	  cursor: pointer;
+	  background-color: #111;
+	  color: white;
+	  padding: 10px 15px;
+	  border: none;
+	}
+
+	.openbtn:hover {
+	  background-color: #444;
+	}
+
+	#main {
+	  transition: margin-left .5s;
+	  padding: 16px;
+	}
+
+	/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+	@media screen and (max-height: 450px) {
+	  .sidebar {padding-top: 15px;}
+	  .sidebar a {font-size: 18px;}
+	}
   </style>
 </head>
 <body class="cursor">
-	<div class="jumbotron text-center" >
+		<div id="mySidebar" class="sidebar">
+		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+		  <a href="https://kaggle.com/jealousleopard/goodreadsbooks" target="_blank">Dataset</a>
+		  <a href="mailto:soumik@cse.jgec.ac.in">Contact</a>
+		</div>
+	  <button class="openbtn" onclick="openNav()">☰</button>  
+	<script>
+	function openNav() {
+	  document.getElementById("mySidebar").style.width = "250px";
+	  document.getElementById("main").style.marginLeft = "250px";
+	}
+
+	function closeNav() {
+	  document.getElementById("mySidebar").style.width = "0";
+	  document.getElementById("main").style.marginLeft= "0";
+	}
+	</script>
+	<div class="jumbotron text-left" >
  		<h1>Books</h1>
-		<p>You searched for</p>
+		<h3>You searched for</h3>
 		<figure>
 			<img src = {{links[0].image_url}} />
-			<figcaption>{{links[0].title}}</figcaption>
+			<h4>{{links[0].title}} by  {{links[0].authors[0]}}</h4>
 		</figure>
 	</div>
 	<div class="container">
 		<div class="row">
 			{%for i in range(1,4)%}
 					<div class="col-sm-4" style="align-content: center;">
-						<img src="{{links[i].image_url}}"/>
-						<figcaption>{{links[i].title}}</figcaption>
+					<div class="flip-card">
+					  <div class="flip-card-inner">
+						<div class="flip-card-front"><img src="{{links[i].image_url}}"/></div>
+						<div class="flip-card-back">
+							<h4>{{links[i].title}}</h4>
+							{{links[i].average_rating}} <span class="fa fa-star checked"></span><br>
+							#{{links[i].gid}}
+						</div>	 				  
+						</div>
+					</div>
 					</div>
 			{%endfor%}
 		</div>
+		<br><br>
 		<div class="row">
 			{%for i in range(4,7)%}
 					<div class="col-sm-4" style="align-content: center;">
-						<img src="{{links[i].image_url}}"/>
-						<figcaption>{{links[i].title}}</figcaption>
+					<div class="flip-card">
+					  <div class="flip-card-inner">
+						<div class="flip-card-front"><img src="{{links[i].image_url}}"/></div>
+						<div class="flip-card-back">
+							<h4>{{links[i].title}}</h4>
+							{{links[i].average_rating}} <span class="fa fa-star checked"></span><br>
+							#{{links[i].gid}}
+						</div>
+	 				  </div>
+					</div>
 					</div>
 			{%endfor%}
-		</div>
-		<h1><a href="/">Try again!</a></h1>
+		</div><br><br>
+		<div style="align-content: center"><a href="/" style="color: #000" ><h1>Try again!</h1></a></div>
   		<br>
 		</div>
 </body>

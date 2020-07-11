@@ -48,6 +48,7 @@ def get_search_tag():
 		book_obj = gc.book(query_num)
 	else:
 		book_obj = gc.book(isbn=query_num)
+	print(book_obj.average_rating)
 	links = book_obj.similar_books[:7]
 	return links,book_obj,query_num
 
