@@ -87,6 +87,21 @@
 	  .sidebar {padding-top: 15px;}
 	  .sidebar a {font-size: 18px;}
 	}
+
+	input[type=text], select, textarea{
+	  width: 100%;
+	  padding: 12px;
+	  border: 1px solid #ccc;
+	  border-radius: 4px;
+	  box-sizing: border-box;
+	  resize: vertical;
+	}
+	.form-centered {
+	    text-align: center;
+	}
+	form {
+	    display: inline-block;
+	}
   </style>
 </head>
 <body class="cursor">
@@ -112,19 +127,19 @@
     <img style="height:150px" src="https://www.pinclipart.com/picdir/big/169-1690579_book-icon-png-clip-art-transparent-download-book.png"></img>
       <h1>Books</h1>
   </div>
-  <div class="container" >
+  <div class="container form-centered" >
   <form class="form-inline" method="POST">
     <h2>Search:</h2>
     <div class="form-group">
-      <input type="text"  autocomplete="off" class="form-control" id="text" placeholder="Enter ID/ISBN to query" name="text" style="width:455px">
+      <input type="text"  autocomplete="off" class="form-control" id="text" placeholder="Enter ID/ISBN to query" name="text">
     </div>
     <br><br>
     <div class="form-group">
       <input type="radio" name="userChoice" value="isbn_no">  ISBN
       <input type="radio" name="userChoice" value="id_no" style="margin-left:10px;">  ID
     </div>
-    <br>
-    <button type="submit" class="btn btn-primary"  style="margin: 10px;margin-left:200px;">Submit</button>
+    <br><br>
+    <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
 </body>
