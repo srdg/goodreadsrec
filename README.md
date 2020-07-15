@@ -19,7 +19,7 @@ python3 app.py
 ### Start Local Server 
 * Go over to the [Goodreads API](https://goodreads.com/api) and register a dummy application to get your own developer token and key. (You need to create an account first, though.)
 
-* Use the token and the key in `app.py:L5` to connect your goodreads client to the API. Alternatively, to set the token/key via command line - 
+* Use the token and the key in [`app.py:L5`](https://github.com/srdg/goodreadsrec/blob/master/app.py#L5) to connect your goodreads client to the API. Alternatively, to set the token/key via command line - 
 #### Linux
 ```
 export GCLIENT_TOKEN="your-goodreads-token-here"  
