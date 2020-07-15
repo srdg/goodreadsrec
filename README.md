@@ -33,7 +33,7 @@ setx GCLIENT_KEY="your-goodreads-key-here"
 
 Open [localhost on port 5000](http://localhost:5000) and you should be able to see the app deployed in your local system.
 
-## Deployment
+## Live Demo
 
 * The app is currently deployed on [heroku](http:goodreadsrec.herokuapp.com). Continuous integration is enabled.
 
